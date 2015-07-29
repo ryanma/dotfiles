@@ -1,5 +1,10 @@
 set nocompatible " Vim only
 syntax enable
+set background=dark
+set t_Co=256
+" Molokai settings
+let g:rehash256=1
+
 colorscheme molokai
 
 " spaces per tab
@@ -51,9 +56,6 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc()==0 && !exists("s:std_in") | NERDTree | endif
 
 set lazyredraw
-
-" Molokai settings
-let g:rehash256=1
 
 " Airline Configuration
 let g:airline#extensions#tabline#enabled=1
