@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 set nocompatible " Vim only
 syntax enable
 set background=dark
@@ -49,6 +51,10 @@ map <C-L> <C-W>l<C-W>_
 
 " leader commands
 let mapleader=' '
+nnoremap <leader>h :bp<CR>
+nnoremap <leader>l :bn<CR>
+nnoremap <leader>q :bp<bar>bd #<CR>
+nnoremap <leader>bb :ls<CR>
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 autocmd VimEnter NERDTree
@@ -61,4 +67,3 @@ set lazyredraw
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemod=':t'
 
-execute pathogen#infect()
