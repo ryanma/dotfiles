@@ -1,6 +1,21 @@
-execute pathogen#infect()
-
 set nocompatible " Vim only
+filetype off
+
+" Install Vundle by hand:
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tomasr/molokai'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+
+call vundle#end()
+
 syntax enable
 set background=dark
 set t_Co=256
@@ -16,7 +31,7 @@ set softtabstop=2
 " tabs are spaces
 set expandtab
 
-set number " show line numbers
+set relativenumber " show line numbers
 set colorcolumn=99 " highlight column 99
 set showcmd " show command while typing
 set cursorline " highlight current line
@@ -34,14 +49,12 @@ set ignorecase
 set smartcase " be smart about search for case
 
 "folding
-set foldenable "enable
-set foldlevelstart=10 " open most folds by default
-set foldnestmax=5 " 10 nested fold max
-set foldmethod=indent " fold on indented text
+"set foldenable "enable
+"set foldlevelstart=10 " open most folds by default
+"set foldnestmax=5 " 10 nested fold max
+"set foldmethod=indent " fold on indented text
 
 " move by visual line
-nnoremap j gj 
-nnoremap k gk
 
 " move with ctrl+h/j/k/l
 map <C-J> <C-W>j<C-W>_
@@ -65,5 +78,5 @@ set lazyredraw
 
 " Airline Configuration
 let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#fnamemod=':t'
-
+set laststatus=2 " always show status line
+"let g:airline#extensions#tabline#fnamemod=':t'
