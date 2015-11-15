@@ -13,6 +13,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-sleuth'
 
 call vundle#end()
 

@@ -113,4 +113,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PS1="\[\033[38;5;8m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;1m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;8m\]>\[$(tput sgr0)\]"
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

@@ -1,0 +1,9 @@
+[user]
+	email = ryan.matt.12@gmail.com
+	name = Ryan Matt
+[alias]
+  co = checkout
+  st = status
+  br = branch
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
