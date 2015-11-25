@@ -113,6 +113,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PS1="\[\033[38;5;8m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;1m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;8m\]>\[$(tput sgr0)\]"
+#export PS1="\[\033[38;5;8m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;1m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;8m\]>\[$(tput sgr0)\]"
+
+# custom prompt
+EXIT=' \[$(tput bold)\]\[\033[38;5;242m\]$?\[$(tput sgr0)\] '
+USER='\[$(tput bold)\]\[\033[38;5;242m\][\u]\[$(tput sgr0)\] '
+DIR='\[$(tput bold)\]\[\033[38;5;242m\]\W\[$(tput sgr0)\] '
+GIT='\[$(tput bold)\]\[\033[38;5;242m\]$(__git_ps1 "%s ")\[$(tput sgr0)\] '
+NEWLINE='\n'
+END=' > \[\003[00m\]'
+export PS1=$NEWLINE$EXIT$USER$DIR$GIT$NEWLINE$END
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
