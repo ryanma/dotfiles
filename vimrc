@@ -7,13 +7,17 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tomasr/molokai'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-endwise'
+Plugin 'elmcast/elm-vim'
 
 call vundle#end()
 
@@ -55,20 +59,20 @@ set smartcase " be smart about search for case
 "set foldnestmax=5 " 10 nested fold max
 "set foldmethod=indent " fold on indented text
 
-" move by visual line
-
 " move with ctrl+h/j/k/l
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-H> <C-W>h<C-W>_
-map <C-L> <C-W>l<C-W>_
+map <C-J> <C-W>j<C-W> 
+map <C-K> <C-W>k<C-W> 
+map <C-H> <C-W>h<C-W> 
+map <C-L> <C-W>l<C-W> 
 
 " leader commands
 let mapleader=' '
-nnoremap <leader>h :bp<CR>
-nnoremap <leader>l :bn<CR>
-nnoremap <leader>q :bp<bar>bd #<CR>
-nnoremap <leader>bb :ls<CR>
+nnoremap <leader>h :bprevious<CR>
+nnoremap <leader>l :bnext<CR>
+nnoremap <leader>w :bprevious<bar>bdelete #<CR>
+nnoremap <leader>c :bprevious<bar>bdelete #<CR>close #<CR>
+nnoremap <leader>bl :ls<CR>
+nnoremap <leader>/ :TComment<CR>
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 autocmd VimEnter NERDTree
@@ -80,4 +84,4 @@ set lazyredraw
 " Airline Configuration
 let g:airline#extensions#tabline#enabled=1
 set laststatus=2 " always show status line
-"let g:airline#extensions#tabline#fnamemod=':t'
+let g:airline#extensions#tabline#fnamemod=':t'

@@ -121,7 +121,10 @@ USER='\[$(tput bold)\]\[\033[38;5;242m\][\u]\[$(tput sgr0)\] '
 DIR='\[$(tput bold)\]\[\033[38;5;242m\]\W\[$(tput sgr0)\] '
 GIT='\[$(tput bold)\]\[\033[38;5;242m\]$(__git_ps1 "%s ")\[$(tput sgr0)\] '
 NEWLINE='\n'
-END=' > \[\003[00m\]'
+END=' > \[\003\]'
 export PS1=$NEWLINE$EXIT$USER$DIR$GIT$NEWLINE$END
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
