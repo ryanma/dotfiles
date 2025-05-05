@@ -32,13 +32,16 @@ if not vim.loop.fs_stat(mini_path) then
 end
 
 -- Safely execute immediately
--- now(function()
---   vim.o.termguicolors = true
---   vim.cmd('colorscheme randomhue')
--- end)
+now(function()
+  vim.o.termguicolors = true
+  -- vim.cmd('colorscheme randomhue')
+end)
 now(function()
   require('mini.notify').setup()
   vim.notify = require('mini.notify').make_notify()
+  add({ source = 'rebelot/kanagawa.nvim', })
+  -- vim.o.colorscheme = "kanagawa"
+  vim.cmd([[colorscheme kanagawa]])
 end)
 now(function() require('mini.icons').setup() end)
 now(function() require('mini.tabline').setup() end)
@@ -46,7 +49,13 @@ now(function() require('mini.statusline').setup() end)
 
 -- Safely execute later
 later(function() require('mini.ai').setup() end)
+later(function() require('mini.basics').setup() end)
+later(function() require('mini.bracketed').setup() end)
+later(function() require('mini.cursorword').setup() end)
 later(function() require('mini.comment').setup() end)
+later(function() require('mini.files').setup() end)
+later(function() require('mini.operators').setup() end)
+later(function() require('mini.pairs').setup() end)
 later(function() require('mini.pick').setup() end)
 later(function() require('mini.surround').setup() end)
 
@@ -56,22 +65,40 @@ now(function()
   add({
     source = 'neovim/nvim-lspconfig',
     -- Supply dependencies near target plugin
-    depends = { 'williamboman/mason.nvim' },
+    depends = { 'williamboman/mason.nvim',  'williamboman/mason-lspconfig.nvim' },
   })
+
+  vim.lsp.enable('ruby_lsp')
+  -- vim.lsp.config('ruby', { mason = false })
 end)
 
 later(function()
-  -- -- add({
-    -- source = 'nvim-treesitter/nvim-treesitter',
-    -- -- Use 'master' while monitoring updates in 'main'
-    -- checkout = 'master',
-    -- monitor = 'main',
-    -- -- Perform action after every checkout
-    -- hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
-  -- })
-  -- -- Possible to immediately execute code which depends on the added plugin
-  -- require('nvim-treesitter.configs').setup({
-    -- ensure_installed = { 'lua', 'vimdoc' },
-    -- highlight = { enable = true },
-  -- })
+  add({
+    source = 'nvim-treesitter/nvim-treesitter',
+    -- Use 'master' while monitoring updates in 'main'
+    checkout = 'master',
+    monitor = 'main',
+    -- Perform action after every checkout
+    hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
+  })
+  -- Possible to immediately execute code which depends on the added plugin
+  require('nvim-treesitter.configs').setup({
+    ensure_installed = { 'lua', 'vimdoc' },
+    highlight = { enable = true },
+  })
+
+  add({ source = 'swaits/zellij-nav.nvim',
+  })
+  require("zellij-nav").setup()
+
+  local map = vim.keymap.set
+  map("n", "<a-h>", "<cmd>ZellijNavigateLeftTab<cr>",  { desc = "navigate left or tab"  })
+  map("n", "<a-j>", "<cmd>ZellijNavigateDown<cr>",  { desc = "navigate down"  })
+  map("n", "<a-k>", "<cmd>ZellijNavigateUp<cr>",    { desc = "navigate up"    })
+  map("n", "<a-l>", "<cmd>ZellijNavigateRightTab<cr>", { desc = "navigate right or tab" })
+end)
+
+later(function()
+  require('keymaps')
+  require('settings')
 end)

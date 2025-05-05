@@ -1,3 +1,4 @@
+
 alias be='bundle exec'
 alias bers='bundle exec rspec --color'
 alias gd="git diff"
@@ -7,9 +8,13 @@ alias in_test='RAILS_ENV=test'
 alias ll="ls -al"
 alias clear="clear -x"
 alias src="cd ~/workspace"
+# alias z="zoxide"
+
+# WelcomeHome specific aliases and ENV vars
 alias whs="cd ~/workspace/whs"
 alias wh="cd ~/workspace/whs/welcomehome"
 alias pb="cd ~/workspace/whs/playbook"
+export CONSOLE_SESSIONS_LOG_DIR="/home/ryan/WelcomeHome Software Dropbox/Development/console-sessions"
 
 # user specific functions
 last_migration() {

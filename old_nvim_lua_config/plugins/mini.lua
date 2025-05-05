@@ -8,7 +8,6 @@ return {
 			require('mini.bracketed').setup() -- Go forward/backward with square brackets
 			require('mini.cursorword').setup() -- Autohighlight word under cursor 
 			require('mini.files').setup() -- File manager
-			-- require('mini.hues').setup({  background = '#002734', foreground = '#c0c8cc' })
 			require('mini.icons').setup() 
 			require('mini.notify').setup() -- show notifications in a floating window
 			require('mini.operators').setup() -- Text edit operators
