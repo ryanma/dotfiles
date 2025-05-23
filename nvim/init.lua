@@ -116,7 +116,7 @@ later(function()
   add({ source = "jpalardy/vim-slime", 
 
   })
-  vim.g.slime_target
+  vim.g.slime_target = "zellij"
 
   add({
     source = "pwntester/octo.nvim", 
