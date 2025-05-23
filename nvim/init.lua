@@ -119,11 +119,13 @@ later(function()
   vim.g.slime_target = "zellij"
 
   add({
-    source = "pwntester/octo.nvim", 
-    depends = { 'nvim-lua/plenary.nvim',
+      source = "pwntester/octo.nvim", 
+      depends = { 'nvim-lua/plenary.nvim',
                 'nvim-telescope/telescope.nvim',
-                'nvim-tree/nvim-web-devicons',
-    }
+                'nvim-tree/nvim-web-devicons', },
+  })
+  require("octo").setup({
+	  enable_builtin = true
   })
 
   require('keymaps')
