@@ -1,11 +1,44 @@
 [user]
-	email = ryan.matt.12@gmail.com
+	email = 5639062+ryanma@users.noreply.github.com
 	name = Ryan Matt
 [alias]
-  co = checkout
-  st = status
   br = branch
-  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-
+  co = checkout
+  gi = grep -i
+  hist = log --pretty=format:'%C(green)%h %C(reset)%ad | %s%d %C(blue)[%an]' --graph --date=short
+  mhist = log --pretty=format:'%C(green)%h %C(reset)%ad | %s%d %C(blue)[%an]' --graph --date=short main..
+  please = push --force-with-lease
+  st = status
+  ds = diff --staged                      # show changes in the index only (not working directory)
+  deploy-notes = log --pretty=format:'*%s* (%h)%n%n%b%n%N%n'
+  diff-upstream = "diff @{upstream}..."
+  du = diff-upstream
+[commit]
+  verbose = true
+[remote]
+  pushDefault = origin
+[pull]
+  ff = only
+[diff]
+  colorMoved = zebra
 [push]
-	default = simple
+    default = current
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[safe]
+	directory = /home/ryan/workspace/welcomehome
+[merge]
+    autostash = true
+[rebase]
+  autosquash = true
+  autoStash = true
+  forkPoint = false
+[merge]
+  ff = only
+  summary = true
+[branch]
+  autoSetupMerge = always

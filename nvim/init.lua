@@ -69,10 +69,22 @@ now(function()
   })
 
   vim.lsp.enable('ruby_lsp')
-  -- vim.lsp.config('ruby', { mason = false })
-end)
+  add({
+      source = "Saghen/blink.cmp",
+      depends = { "rafamadriz/friendly-snippets" },
+      checkout = "v1.3.0"
+  })
+  require('blink.cmp').setup()
 
-later(function()
+  add({
+    source = 'nvim-telescope/telescope.nvim',
+    checkout = '0.1.8',
+    depends = {
+            'nvim-lua/plenary.nvim',
+            "nvim-treesitter/nvim-treesitter"
+        }
+  })
+
   add({
     source = 'nvim-treesitter/nvim-treesitter',
     -- Use 'master' while monitoring updates in 'main'
@@ -81,24 +93,39 @@ later(function()
     -- Perform action after every checkout
     hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
   })
-  -- Possible to immediately execute code which depends on the added plugin
   require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'lua', 'vimdoc' },
+    ensure_installed = { 'lua', 'vimdoc', 'ruby' },
     highlight = { enable = true },
   })
+end)
 
+later(function()
+
+  add({ source = 'tpope/vim-fugitive' })
+  add({ source = 'lewis6991/gitsigns.nvim' })
   add({ source = 'swaits/zellij-nav.nvim',
   })
   require("zellij-nav").setup()
 
   local map = vim.keymap.set
-  map("n", "<a-h>", "<cmd>ZellijNavigateLeftTab<cr>",  { desc = "navigate left or tab"  })
-  map("n", "<a-j>", "<cmd>ZellijNavigateDown<cr>",  { desc = "navigate down"  })
-  map("n", "<a-k>", "<cmd>ZellijNavigateUp<cr>",    { desc = "navigate up"    })
-  map("n", "<a-l>", "<cmd>ZellijNavigateRightTab<cr>", { desc = "navigate right or tab" })
-end)
+  map("n", "<A-h>", "<cmd>ZellijNavigateLeftTab<cr>",  { desc = "navigate left or tab"  })
+  map("n", "<A-j>", "<cmd>ZellijNavigateDown<cr>",  { desc = "navigate down"  })
+  map("n", "<A-k>", "<cmd>ZellijNavigateUp<cr>",    { desc = "navigate up"    })
+  map("n", "<A-l>", "<cmd>ZellijNavigateRightTab<cr>", { desc = "navigate right or tab" })
 
-later(function()
+  add({ source = "jpalardy/vim-slime", 
+
+  })
+  vim.g.slime_target
+
+  add({
+    source = "pwntester/octo.nvim", 
+    depends = { 'nvim-lua/plenary.nvim',
+                'nvim-telescope/telescope.nvim',
+                'nvim-tree/nvim-web-devicons',
+    }
+  })
+
   require('keymaps')
   require('settings')
 end)
