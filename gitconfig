@@ -4,6 +4,7 @@
 [alias]
   br = branch
   co = checkout
+  cp = cherry-pick
   gi = grep -i
   hist = log --pretty=format:'%C(green)%h %C(reset)%ad | %s%d %C(blue)[%an]' --graph --date=short
   mhist = log --pretty=format:'%C(green)%h %C(reset)%ad | %s%d %C(blue)[%an]' --graph --date=short main..
