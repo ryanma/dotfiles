@@ -128,6 +128,11 @@ later(function()
   vim.g.slime_target = "zellij"
 
 
+  add({ source = "m4xshen/hardtime.nvim",
+        depends = { "MunifTanjim/nui.nvim" }
+      })
+  require("hardtime").setup()
+
   require('keymaps')
   require('settings')
 end)
