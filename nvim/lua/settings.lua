@@ -7,6 +7,8 @@ vim.g.maplocalleader = " "
 -- indentation of four spaces
 vim.o.sw = 4
 vim.o.ts = 4
+-- highlight column at 80 characters -- max line length
+vim.o.colorcolumn = "80"
 vim.o.et = true
 
 -- Show whitespace.
