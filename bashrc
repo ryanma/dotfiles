@@ -132,6 +132,16 @@ if [ -f ~/.user_bash_aliases ]; then
     source ~/.user_bash_aliases
 fi
 
+# After omakub installation, symlink this file to to ~/.userrd
+# then add these two lines to ~/.bashrc and uncomment them
+
+## add a personal file
+# source ~/.userrc
+
+# Custom bash prompt
+ARROW=$'\uf0a9 '
+PROMPT_COMMAND='PS1_UPSTREAM=$(git rev-parse --abbrev-ref @{upstream} 2> /dev/null || echo "no upstream") PS1_CMD1=$(GIT_PS1_SHOWUNTRACKED_FILES=1 GIT_PS1_SHOWUPSTREAM="verbose name" GIT_PS1_SHOWDIRTYSTATE=1 __git_ps1 " (%s)")';
+PS1='\n\[\e[37m\]$?\[\e[0m\] \[\e[37m\]|\[\e[0m\] \[\e[38;5;40m\]\w\[\e[38;5;81m\]${PS1_CMD1}\n\[\e[0m\]$ARROW '
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:~/workspace/playbook/bin:$PATH"
-
