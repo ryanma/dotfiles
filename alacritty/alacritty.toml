@@ -1,0 +1,36 @@
+import = [ "~/.config/alacritty/theme.toml", "~/.config/alacritty/font.toml", "~/.config/alacritty/font-size.toml", "~/.config/alacritty/shared.toml" ]
+
+[[hints.enabled]]
+command = "xdg-open"
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "J", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+
+[[hints.enabled]]
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+# regex = "([^\\[\" ]+\\.\\w+:?\\d*|[a-z0-9]{8,40})"
+action = "Copy"
+mouse = { enabled = true }
+binding = { key = "L", mods = "Control|Shift" }
+
+[[hints.enabled]]
+regex = "([^\\[\" ]+\\.\\w+:?\\d*|[a-z0-9]{40})"
+# regex = "([^\\[\" ]+\\.\\w+:?\\d*|[a-z0-9]{8,40})"
+action = "Copy"
+mouse = { enabled = true }
+binding = { key = "K", mods = "Control|Shift" }
+
+[[hints.enabled]]
+regex = "([^\\[\" ]+\\.\\w+:?\\d*|[a-z0-9]{8,40})"
+action = "Copy"
+mouse = { enabled = true }
+binding = { key = "S", mods = "Control|Shift" }
+
+[[hints.enabled]]
+regex = "<.*>"
+action = "Copy"
+mouse = { enabled = true }
+binding = { key = "M", mods = "Control|Shift" }
