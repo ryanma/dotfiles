@@ -97,6 +97,15 @@ now(function()
     ensure_installed = { 'lua', 'vimdoc', 'ruby' },
     highlight = { enable = true },
   })
+  add({
+      source = "pwntester/octo.nvim", 
+      depends = { 'nvim-lua/plenary.nvim',
+                'nvim-telescope/telescope.nvim',
+                'nvim-tree/nvim-web-devicons', },
+  })
+  require("octo").setup({
+      enable_builtin = true
+  })
 end)
 
 later(function()
@@ -118,15 +127,6 @@ later(function()
   })
   vim.g.slime_target = "zellij"
 
-  add({
-      source = "pwntester/octo.nvim", 
-      depends = { 'nvim-lua/plenary.nvim',
-                'nvim-telescope/telescope.nvim',
-                'nvim-tree/nvim-web-devicons', },
-  })
-  require("octo").setup({
-	  enable_builtin = true
-  })
 
   require('keymaps')
   require('settings')
