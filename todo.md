@@ -8,4 +8,5 @@
 [] telescope args
 [] bash prompt stuff
 [] turn on staged/changed indicators in bash prompt
-[] sentry api indicator
+[] new sentry indicator
+[] custom telescope/fzf insertions (emails)
