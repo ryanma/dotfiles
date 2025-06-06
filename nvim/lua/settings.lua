@@ -4,11 +4,12 @@ local arrows = require("mini.icons").arrows
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- indentation of four spaces
-vim.o.sw = 4
-vim.o.ts = 4
 -- highlight column at 80 characters -- max line length
 vim.o.colorcolumn = "80"
+
+-- indentation of two spaces
+vim.o.sw = 2
+vim.o.ts = 2
 vim.o.et = true
 
 -- Show whitespace.
