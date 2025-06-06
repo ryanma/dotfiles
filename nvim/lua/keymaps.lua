@@ -7,6 +7,7 @@ map('n', '<leader>x', ':b#<CR> :bd#<CR>')
 map('n', '<leader>o', ':Octo<CR>')
 
 map('n', '<leader>gh', ':Gitsigns preview_hunk<CR>')
+map('n', '<leader>a', ':call MiniSplitjoin.toggle()<CR>')
 
 map("n", "<C-h>", "<cmd>wincmd h<cr>",  { desc = "navigate left or tab"  })
 map("n", "<C-j>", "<cmd>wincmd j<cr>",  { desc = "navigate down"  })

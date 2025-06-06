@@ -57,6 +57,7 @@ later(function() require('mini.files').setup() end)
 later(function() require('mini.pairs').setup() end)
 later(function() require('mini.pick').setup() end)
 later(function() require('mini.surround').setup() end)
+later(function() require('mini.splitjoin').setup() end)
 
 now(function()
   -- Use other plugins with `add()`. It ensures plugin is available in current
