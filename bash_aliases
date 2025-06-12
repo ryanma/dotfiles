@@ -1,6 +1,7 @@
 
 alias be='bundle exec'
 alias bers='bundle exec rspec --color'
+alias clipcopy="wl-copy"
 alias gd="git diff"
 alias gwd="git diff --word-diff"
 alias gs="git status"
