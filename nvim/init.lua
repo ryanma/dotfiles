@@ -54,6 +54,7 @@ later(function() require('mini.bracketed').setup() end)
 later(function() require('mini.cursorword').setup() end)
 later(function() require('mini.comment').setup() end)
 later(function() require('mini.files').setup() end)
+later(function() require('mini.indentscope').setup() end)
 later(function() require('mini.pairs').setup() end)
 later(function() require('mini.pick').setup() end)
 later(function() require('mini.surround').setup() end)
@@ -112,9 +113,10 @@ later(function()
 
   add({ source = 'tpope/vim-fugitive' })
   add({ source = 'lewis6991/gitsigns.nvim' })
-  add({ source = 'swaits/zellij-nav.nvim',
-  })
+  add({ source = 'swaits/zellij-nav.nvim' })
   require("zellij-nav").setup()
+  add({ source = 'lukas-reineke/indent-blankline.nvim' })
+  require("ibl").setup()
 
   local map = vim.keymap.set
   map("n", "<A-h>", "<cmd>ZellijNavigateLeftTab<cr>",  { desc = "navigate left or tab"  })
