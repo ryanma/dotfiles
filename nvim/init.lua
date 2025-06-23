@@ -75,7 +75,17 @@ now(function()
       depends = { "rafamadriz/friendly-snippets" },
       checkout = "v1.3.0"
   })
-  require('blink.cmp').setup()
+  require('blink.cmp').setup({
+    sources = {
+      providers = {
+        snippets = {
+          opts = {
+            search_paths = { vim.fn.stdpath("config") .. "/snippets" },
+          },
+        }
+      }
+    }
+  })
 
   add({
     source = 'nvim-telescope/telescope.nvim',
@@ -106,6 +116,14 @@ now(function()
   })
   require("octo").setup({
       enable_builtin = true
+  add({
+    source = "chrisgrieser/nvim-scissors",
+    depends = {
+                'nvim-telescope/telescope.nvim',
+    }
+  })
+  require("scissors").setup({
+    snippetDir = vim.fn.stdpath("config") .. "/snippets",
   })
 end)
 

@@ -9,6 +9,11 @@ map('n', '<leader>o', ':Octo<CR>')
 map('n', '<leader>gh', ':Gitsigns preview_hunk<CR>')
 map('n', '<leader>a', ':call MiniSplitjoin.toggle()<CR>')
 
+map('', '<leader>Sa', function() require("scissors").addNewSnippet() end, { desc = "Snippet: Add"})
+-- map('v', '<leader>Sa', function() require("scissors").addNewSnippet() end, { desc = "Snippet: Add"})
+map('n', '<leader>Se', function() require("scissors").editSnippet() end, { desc = "Snippet: Edit"})
+-- map('v', '<leader>Se', function() require("scissors").editSnippet() end, { desc = "Snippet: Edit"})
+
 map("n", "<C-h>", "<cmd>wincmd h<cr>",  { desc = "navigate left or tab"  })
 map("n", "<C-j>", "<cmd>wincmd j<cr>",  { desc = "navigate down"  })
 map("n", "<C-k>", "<cmd>wincmd k<cr>",    { desc = "navigate up"    })

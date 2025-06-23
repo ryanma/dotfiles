@@ -1,0 +1,1 @@
+{"fcp":{"body":["prospect = FactoryBot.create(","  :prospect,","  :with_community,","  :with_resident,",")"],"prefix":"fcp"}}
