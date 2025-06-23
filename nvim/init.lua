@@ -67,8 +67,10 @@ now(function()
     -- Supply dependencies near target plugin
     depends = { 'williamboman/mason.nvim',  'williamboman/mason-lspconfig.nvim' },
   })
-
   vim.lsp.enable('ruby_lsp')
+  vim.lsp.enable('rubocop')
+  vim.lsp.enable('marksman')
+
   add({
       source = "Saghen/blink.cmp",
       depends = { "rafamadriz/friendly-snippets" },
