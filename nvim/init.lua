@@ -53,7 +53,6 @@ later(function() require('mini.basics').setup() end)
 later(function() require('mini.bracketed').setup() end)
 later(function() require('mini.cursorword').setup() end)
 later(function() require('mini.comment').setup() end)
-later(function() require('mini.files').setup() end)
 later(function() require('mini.pairs').setup() end)
 later(function() require('mini.pick').setup() end)
 later(function() require('mini.surround').setup() end)
@@ -128,6 +127,14 @@ now(function()
   require("scissors").setup({
     snippetDir = vim.fn.stdpath("config") .. "/snippets",
   })
+
+  add({ source = "nvim-neo-tree/neo-tree.nvim",
+        depends = {
+          "nvim-lua/plenary.nvim",
+          "nvim-tree/nvim-web-devicons",
+          "MunifTanjim/nui.nvim",
+        },
+     })
 end)
 
 later(function()
@@ -159,7 +166,6 @@ later(function()
 
   })
   vim.g.slime_target = "zellij"
-
 
   add({ source = "m4xshen/hardtime.nvim",
         depends = { "MunifTanjim/nui.nvim" }

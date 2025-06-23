@@ -1,6 +1,7 @@
 local map = vim.keymap.set
 
-map('n', '<leader>e', MiniFiles.open)
+map('n', '<leader>e', ':Neotree toggle reveal<cr>')
+map('n', '<leader>tf', ':Neotree reveal_file=<cfile> reveal_force_cwd<cr>')
 map('n', '<leader>gr', ':call CommitFileAndTestFile()<CR>')
 map('n', '<leader>x', ':b#<CR> :bd#<CR>')
 
