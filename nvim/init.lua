@@ -114,7 +114,9 @@ now(function()
                 'nvim-tree/nvim-web-devicons', },
   })
   require("octo").setup({
-      enable_builtin = true
+      enable_builtin = true,
+      use_local_fs = true,
+  })
   add({
     source = "chrisgrieser/nvim-scissors",
     depends = {
