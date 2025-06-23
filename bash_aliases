@@ -28,3 +28,12 @@ print_colors() {
     printf "\x1b[38;5;${i}mcolour${i}\n"
   done
 }
+
+watchexec_welcomehome() {
+  if [[ -n "$1" && "$1" != "V" ]]; then
+    watchexec -c clear -d 100 -w app -w test -w bin -w config -w lib -w spec rails test $@
+  else
+    echo "Specify a path!" >&2
+  fi
+}
+alias wrt=watchexec_welcomehome
