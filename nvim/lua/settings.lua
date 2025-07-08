@@ -7,6 +7,9 @@ vim.g.maplocalleader = " "
 -- highlight column at 80 characters -- max line length
 vim.o.colorcolumn = "80"
 
+vim.o.scrolloff = 2
+vim.o.sidescrolloff = 5
+
 -- indentation of two spaces
 vim.o.sw = 2
 vim.o.ts = 2
