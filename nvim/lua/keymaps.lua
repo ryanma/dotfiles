@@ -10,6 +10,9 @@ map('n', '<leader>o', ':Octo<CR>')
 map('n', '<leader>gh', ':Gitsigns preview_hunk<CR>')
 map('n', '<leader>a', ':call MiniSplitjoin.toggle()<CR>')
 
+map("n", "<leader>yP", ':let @+ = expand("%:p")<CR>', { desc = "Copy full path" })
+map("n", "<leader>yp", ':let @+ = expand("%:~:.")<CR>', { desc = "Copy relative path" })
+
 map('', '<leader>Sa', function() require("scissors").addNewSnippet() end, { desc = "Snippet: Add"})
 -- map('v', '<leader>Sa', function() require("scissors").addNewSnippet() end, { desc = "Snippet: Add"})
 map('n', '<leader>Se', function() require("scissors").editSnippet() end, { desc = "Snippet: Edit"})
