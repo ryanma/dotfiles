@@ -45,13 +45,14 @@
 [safe]
 	directory = /home/ryan/workspace/welcomehome
 [merge]
-    autostash = true
+  autostash = true
+  ff = only
+  summary = true
+  conflictStyle=zdiff3
 [rebase]
   autosquash = true
   autoStash = true
   forkPoint = false
-[merge]
-  ff = only
-  summary = true
+  rebaseMerges = true
 [branch]
   autoSetupMerge = always
