@@ -1,13 +1,18 @@
 
 alias be='bundle exec'
 alias bers='bundle exec rspec --color'
+alias clear="clear -x"
 alias clipcopy="wl-copy"
 alias gd="git diff"
-alias gwd="git diff --word-diff"
+alias ge="git edit"
+alias grt=git-run-tests
 alias gs="git status"
+alias gwd="git diff --word-diff"
 alias in_test='RAILS_ENV=test'
 alias ll="ls -al"
-alias clear="clear -x"
+alias paw="push_and_watch_checks"
+alias rc="cd ~/workspace/welcomehome/ && bin/rails console"
+alias say="espeak"
 alias src="cd ~/workspace"
 # alias z="zoxide"
 
@@ -15,7 +20,6 @@ alias src="cd ~/workspace"
 alias whs="cd ~/workspace/whs"
 alias wh="cd ~/workspace/whs/welcomehome"
 alias pb="cd ~/workspace/whs/playbook"
-export CONSOLE_SESSIONS_LOG_DIR="/home/ryan/WelcomeHome Software Dropbox/Development/console-sessions"
 
 # user specific functions
 last_migration() {
@@ -37,6 +41,8 @@ watchexec_welcomehome() {
   fi
 }
 alias wrt=watchexec_welcomehome
+alias wgrt="watchexec -c clear -d 100 -w app -w test -w bin -w config -w lib -w spec git-run-tests"
+alias wgrst="watchexec -c clear -d 100 -w app -w test -w bin -w config -w lib -w spec git-run-tests system"
 
 rails-routes-grep () {
   md5="$(md5sum ./config/routes.rb | cut -d " " -f 1)"

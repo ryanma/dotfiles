@@ -5,6 +5,9 @@
   br = branch
   co = checkout
   cp = cherry-pick
+  edit = "!c() { $EDITOR $(git diff --name-only --diff-filter=dr HEAD; git diff --name-only --diff-filter=dr ${1:-'@{upstream}'}...) ; }; c"
+  e = edit
+  e1 = edit "HEAD~"
   gi = grep -i
   hist = log --pretty=format:'%C(green)%h %C(reset)%ad | %s%d %C(blue)[%an]' --graph --date=short
   mhist = log --pretty=format:'%C(green)%h %C(reset)%ad | %s%d %C(blue)[%an]' --graph --date=short main..
