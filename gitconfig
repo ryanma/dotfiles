@@ -3,6 +3,7 @@
 	name = Ryan Matt
 [core]
   pager=delta
+	excludesfile = /home/ryan/.gitignore
 [interactive]
   diffFilter=delta --color-only
 [delta]
