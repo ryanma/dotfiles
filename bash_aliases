@@ -37,3 +37,21 @@ watchexec_welcomehome() {
   fi
 }
 alias wrt=watchexec_welcomehome
+
+rails-routes-grep () {
+  md5="$(md5sum ./config/routes.rb | cut -d " " -f 1)"
+  cache="tmp/routes.rb-${md5}"
+  if [[ -f "$cache" ]]
+  then
+    tput setaf 2
+    echo "[Using cached routes ${cache}]" >&2
+    echo "" >&2
+    tput sgr0
+    routes="$(cat "$cache")"
+  else
+    routes="$(rails routes)"
+    echo "$routes" > "$cache"
+  fi
+  echo "$routes" | grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,venv} "${1:-}"
+}
+alias rrg=rails-routes-grep
