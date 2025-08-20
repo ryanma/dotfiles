@@ -3,6 +3,8 @@
 	name = Ryan Matt
 [alias]
   br = branch
+  checkout-fuzzy = "!git fetch && git br --all | fzf | xargs git checkout"
+  cf = checkout-fuzzy
   co = checkout
   cp = cherry-pick
   edit = "!c() { $EDITOR $(git diff --name-only --diff-filter=dr HEAD; git diff --name-only --diff-filter=dr ${1:-'@{upstream}'}...) ; }; c"

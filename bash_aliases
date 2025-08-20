@@ -3,6 +3,7 @@ alias be='bundle exec'
 alias bers='bundle exec rspec --color'
 alias clear="clear -x"
 alias clipcopy="wl-copy"
+alias gcf="git checkout-fuzzy"
 alias gd="git diff"
 alias ge="git edit"
 alias grt=git-run-tests
