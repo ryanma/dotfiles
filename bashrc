@@ -136,6 +136,12 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
+if [ -f ~/.env ]; then
+    set -a
+    source ~/.env
+    set +a
+fi
+
 # After omakub installation, symlink this file to to ~/.userrd
 # then add these two lines to ~/.bashrc and uncomment them
 
