@@ -138,7 +138,6 @@ now(function()
 end)
 
 later(function()
-
   add({ source = 'tpope/vim-fugitive' })
   add({ source = 'lewis6991/gitsigns.nvim' })
   add({ source = 'swaits/zellij-nav.nvim' })
@@ -174,4 +173,5 @@ later(function()
 
   require('keymaps')
   require('settings')
+  vim.cmd("source ~/.config/nvim/test-runner.vim")
 end)
