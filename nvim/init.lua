@@ -169,7 +169,11 @@ later(function()
   add({ source = "m4xshen/hardtime.nvim",
         depends = { "MunifTanjim/nui.nvim" }
       })
-  require("hardtime").setup()
+  -- require("hardtime").setup()
+
+  add({ source = "RRethy/nvim-treesitter-endwise", })
+  add({ source = "tpope/vim-rails", })
+  add({ source = "karb94/neoscroll.nvim", })
 
   require('keymaps')
   require('settings')

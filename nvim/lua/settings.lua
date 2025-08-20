@@ -5,7 +5,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- highlight column at 80 characters -- max line length
-vim.o.colorcolumn = "80"
+vim.o.colorcolumn = "81"
+-- TODO set text width variables correctly on a per file type basis
 
 vim.o.scrolloff = 2
 vim.o.sidescrolloff = 5
